@@ -32,7 +32,7 @@ class Proj {
   }
 
   public int sum() {
-    return this.resultado = n1 + n2;
+    return n1 + n2;
   }
 
   private int sub() {
