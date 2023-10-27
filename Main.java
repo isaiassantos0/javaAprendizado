@@ -1,35 +1,27 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
+    Recebedor in = new Recebedor();
+    ArrayList<Integer> numbers = in.iniciador();
 
-    System.out.print("DIGITE UM VALOR String: ");
-    String operation = scan.nextLine();
-
-    System.out.print("DIGITE O PRIMEIRO VALOR: ");
-    int n1 = scan.nextInt();
-
-    System.out.print("DIGITE O SEGUNDO VALOR: ");
-    int n2 = scan.nextInt();
-
-    Proj p = new Proj(n1, n2, operation);
+    Proj teste = new Proj(numbers.get(0), numbers.get(1), numbers.get(2));
   }
 }
 
 class Proj {
   private int n1;
   private int n2;
-  public String op;
-  public int resultado;
+  private int op;
 
-  public Proj(int n1, int n2, String op) {
+  public Proj(int n1, int n2, int op ) {
     this.n1 = n1;
     this.n2 = n2;
     this.op = op;
     defOp();
   }
+
 
   public int sum() {
     return n1 + n2;
@@ -41,16 +33,12 @@ class Proj {
 
   public void defOp() {
 
-    if (op.equals("sum")) {
+    if (op == 1) {
         System.out.print("Resultado: " + sum());  
 
-      } else if (op.equals("sub")) {
+      } else if (op == 2) {
 
         System.out.println("Resultado: " + sub());
-      } else {
-        System.out.println("Invalid operation");
-      }    
+      }   
   }
 }
-
-
